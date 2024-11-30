@@ -24,7 +24,8 @@ export const config: WebdriverIO.Config = {
     // of the config file unless it's absolute.
     //
     specs: [
-        './test/specs/**/*.ts'
+        // './test/specs/**/*.ts',
+        './features/**/*.feature'
     ],
     // Patterns to exclude.
     exclude: [
@@ -117,8 +118,16 @@ export const config: WebdriverIO.Config = {
     //
     // Make sure you have the wdio adapter package for the specific framework installed
     // before running any tests.
-    framework: 'mocha',
-
+    // framework: 'mocha',
+    framework: 'cucumber',
+    cucumberOpts: {
+        require: ['./features/step-definitions/**/*.steps.ts'], // Path to step definition files
+        backtrace: false,
+        requireModule: ['ts-node/register'], // For TypeScript
+        format: ['pretty'],
+        timeout: 60000,
+        ignoreUndefinedDefinitions: false,
+    },
     //
     // The number of times to retry the entire specfile when it fails as a whole
     // specFileRetries: 1,
