@@ -1,0 +1,2 @@
+# MobileAutomationQA
+-Automate the login functionality of a mobile application using Appium.  -Supports iOS and Android native -You can download the .apk and .app/.ipa file from the weblink - https://github.com/saucelabs/my- demo-app-rn/releases/
