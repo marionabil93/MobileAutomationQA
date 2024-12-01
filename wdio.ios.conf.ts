@@ -5,7 +5,7 @@ export const config: WebdriverIO.Config = {
     // ====================
     // WebdriverIO supports running e2e tests as well as unit and component tests.
     runner: 'local',
-    tsConfigPath: './test/tsconfig.json',
+    tsConfigPath: './tsconfig.json',
 
     port: 4723,
     //
@@ -24,7 +24,7 @@ export const config: WebdriverIO.Config = {
     // of the config file unless it's absolute.
     //
     specs: [
-        './test/specs/**/*.ts'
+        './features/**/*.feature'
     ],
     // Patterns to exclude.
     exclude: [
@@ -46,7 +46,7 @@ export const config: WebdriverIO.Config = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
-    maxInstances: 10,
+    maxInstances: 1,
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
@@ -59,6 +59,7 @@ export const config: WebdriverIO.Config = {
         'appium:platformVersion': '17.4',
         'appium:automationName': 'XCUITest',
         'appium:app': '/Users/marioatta/wdio-native-app-tests/MyRNDemoApp.app',
+        // "appium:app": "/Users/marioatta/Library/Developer/Xcode/DerivedData/MyRNDemoApp-dcmguyvvieujuofzlojucfqrmgge/Build/Products/Debug-iphonesimulator/MyRNDemoApp.app",
         "appium:noReset": true,
         "appium:autoGrantPermissions": true,
         "appium:fullReset": false,
@@ -119,7 +120,15 @@ export const config: WebdriverIO.Config = {
     //
     // Make sure you have the wdio adapter package for the specific framework installed
     // before running any tests.
-    framework: 'mocha',
+    framework: 'cucumber',
+    cucumberOpts: {
+        require: ['./features/step-definitions/**/*.steps.ts'], // Path to step definition files
+        backtrace: false,
+        requireModule: ['ts-node/register'], // For TypeScript
+        format: ['pretty'],
+        timeout: 60000,
+        ignoreUndefinedDefinitions: false,
+    },
 
     //
     // The number of times to retry the entire specfile when it fails as a whole
@@ -139,7 +148,8 @@ export const config: WebdriverIO.Config = {
         disableWebdriverStepsReporting: false,
         disableWebdriverScreenshotsReporting: false,
         useCucumberStepReporter: false,
-    }]],    // Options to be passed to Mocha.
+    }]],
+    // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
     mochaOpts: {
         ui: 'bdd',
