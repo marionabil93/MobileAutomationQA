@@ -1,3 +1,5 @@
+import * as path from 'path';
+
 export const config: WebdriverIO.Config = {
     //
     // ====================
@@ -59,7 +61,7 @@ export const config: WebdriverIO.Config = {
         'appium:deviceName': 'nightwatch-android-11',
         'appium:platformVersion': '11.0',
         'appium:automationName': 'UiAutomator2',
-        'appium:app': '/Users/marioatta/wdio-native-app-tests/Android-MyDemoAppRN.1.3.0.build-244.apk',
+        'appium:app': path.resolve(__dirname, 'Android-MyDemoAppRN.1.3.0.build-244.apk'),
         "appium:autoGrantPermissions": true,
     }],
 

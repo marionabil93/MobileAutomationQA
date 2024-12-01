@@ -1,3 +1,5 @@
+import * as path from 'path';
+
 export const config: WebdriverIO.Config = {
     //
     // ====================
@@ -58,7 +60,8 @@ export const config: WebdriverIO.Config = {
         'appium:deviceName': 'iPhone 14',
         'appium:platformVersion': '17.4',
         'appium:automationName': 'XCUITest',
-        'appium:app': '/Users/marioatta/wdio-native-app-tests/MyRNDemoApp.app',
+        // 'appium:app': '/Users/marioatta/wdio-native-app-tests/MyRNDemoApp.app',
+        'appium:app': path.resolve(__dirname, 'MyRNDemoApp.app'),
         "appium:noReset": true,
         "appium:autoGrantPermissions": true,
         "appium:fullReset": false,
