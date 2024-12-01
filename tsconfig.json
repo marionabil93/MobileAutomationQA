@@ -32,7 +32,6 @@
         "wdio.android.conf.ts",
         "wdio.ios.conf.ts",
         "features/**/*",
-        // "./features/**/*.ts",
         "./step-definitions/**/*.ts",
         "./pages/**/*.ts"
     ]

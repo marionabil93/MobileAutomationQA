@@ -59,7 +59,6 @@ export const config: WebdriverIO.Config = {
         'appium:platformVersion': '17.4',
         'appium:automationName': 'XCUITest',
         'appium:app': '/Users/marioatta/wdio-native-app-tests/MyRNDemoApp.app',
-        // "appium:app": "/Users/marioatta/Library/Developer/Xcode/DerivedData/MyRNDemoApp-dcmguyvvieujuofzlojucfqrmgge/Build/Products/Debug-iphonesimulator/MyRNDemoApp.app",
         "appium:noReset": true,
         "appium:autoGrantPermissions": true,
         "appium:fullReset": false,

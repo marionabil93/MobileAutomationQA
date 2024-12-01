@@ -10,11 +10,22 @@ const users = {
     NO_PASSWORD: { username: 'bob@example.com', password: '' },
     STANDARD: { username: 'bob@example.com', password: '10203040' }
 };
+let isAppInitialized = false;
 
 Given('I am on the login page', async () => {
-    await LoginPage.open();
-    await LoginPage.clearUserField();
-    await LoginPage.clearPasswordField();
+
+    if (!isAppInitialized) {
+        console.log('Initializing the application...');
+        await LoginPage.open();
+
+        isAppInitialized = true; // Ensure it won't run again
+    } else {
+        console.log('Application is already initialized.');
+        await LoginPage.clearUserField();
+        await LoginPage.clearPasswordField();
+    }
+
+
 });
 When('the user enters the username and password for a {string} user', async (userType: string | number) => {
     const user = users[userType];
