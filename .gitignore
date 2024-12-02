@@ -3,3 +3,4 @@ allure-results
 .DS_Store
 package-lock.json
 allure-report/
+videos/
