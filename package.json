@@ -6,7 +6,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "wdio": "wdio run ./wdio.conf.ts",
     "android": " npx wdio run ./wdio.android.conf.ts",
-    "ios": " npx wdio run ./wdio.ios.conf.ts"
+    "ios": " npx wdio run ./wdio.ios.conf.ts",
+    "generate-report": "allure generate reports/allure-results --clean && allure open"
   },
   "keywords": [],
   "author": "",

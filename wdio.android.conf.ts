@@ -1,4 +1,5 @@
 import * as path from 'path';
+const fs = require('fs');
 
 export const config: WebdriverIO.Config = {
     //
@@ -147,8 +148,9 @@ export const config: WebdriverIO.Config = {
         outputDir: 'reports/allure-results',
         disableWebdriverStepsReporting: false,
         disableWebdriverScreenshotsReporting: false,
-        useCucumberStepReporter: false,
+        useCucumberStepReporter: true,
     }]],
+
 
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
@@ -156,6 +158,31 @@ export const config: WebdriverIO.Config = {
         ui: 'bdd',
         timeout: 60000
     },
+
+    before: async function (capabilities, specs) {
+        console.log('Starting screen recording...');
+        await browser.startRecordingScreen({
+            videoType: 'mpeg4',
+            timeLimit: 300,
+            bitRate: 500000,
+        });
+    },
+
+    after: async function (result, capabilities, specs) {
+        console.log(`Test ${result ? 'passed' : 'failed'}`);
+
+        // Stop recording and save
+        const video = await browser.stopRecordingScreen();
+        const videoPath = `./videos/${new Date().toISOString().replace(/:/g, '-')}.mp4`;
+        fs.writeFileSync(videoPath, Buffer.from(video, 'base64'));
+    },
+
+    onComplete: function (exitCode, config, capabilities, results) {
+        console.log('Generating Allure report...');
+        const { execSync } = require('child_process');
+        execSync('allure generate reports/allure-results --clean && allure open', { stdio: 'inherit' });
+    },
+
 
     //
     // =====

@@ -99,9 +99,8 @@ Page Objects are stored in the /pageobjects folder
 
 #### For Android: 
 
-<video controls src="RecordForAndroid.mp4" title="Title"></video>
+![alt text](<Screenshot For Android AM.png>)
 
 #### For IOS:
 
-<video controls src="RecordForIOS.mp4" title="Title"></video>
-
+![alt text](ScreenshotForIOS.png)
