@@ -30,6 +30,9 @@
     "appium-xcuitest-driver": "^7.32.0",
     "chai": "^5.1.2",
     "mocha": "^10.8.2",
-    "webdriverio": "^9.4.1"
+    "webdriverio": "^9.4.1",
+    "-": "^0.0.1",
+    "allure-commandline": "^2.32.0",
+    "save-dev": "^0.0.1-security"
   }
 }
