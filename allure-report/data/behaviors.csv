@@ -1,7 +1,0 @@
-"BROKEN","EPIC","FAILED","FEATURE","PASSED","SKIPPED","STORY","UNKNOWN"
-"0","","0","Login Functionality: User logs in with no password","4","0","","0"
-"0","","5","","0","0","","0"
-"0","","0","Login Functionality: User logs in with a valid username and password","4","0","","0"
-"0","","0","Login Functionality: User logs in with a non-matching username and password","4","0","","0"
-"0","","0","Login Functionality: User logs in with a locked account","4","0","","0"
-"0","","0","Login Functionality: User logs in with no user details","4","0","","0"

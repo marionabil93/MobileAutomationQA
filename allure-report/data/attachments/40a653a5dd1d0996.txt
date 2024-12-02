@@ -1,4 +1,0 @@
-{
-  "using": "accessibility id",
-  "value": "tab bar option menu"
-}

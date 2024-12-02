@@ -10,8 +10,8 @@ class DashboardPage {
 
 
     public async isWelcomeMessageVisible() {
-        await this.dashboardTitle.waitForDisplayed({ timeout: 10000 });
-        expect(await this.dashboardTitle.isDisplayed()).to.be.true;
+        await this.dashboardTitle.waitForStable({ timeout: 10000 });
+        expect(await this.dashboardTitle.isStable()).to.be.true;
         return this.dashboardTitle.isDisplayed();
     }
 
