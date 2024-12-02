@@ -98,9 +98,8 @@ Page Objects are stored in the /pageobjects folder
 ### Screenshots and Videos
 
 #### For Android: 
+<img width="1470" alt="Screenshot For Android AM" src="https://github.com/user-attachments/assets/20cd3852-f6a2-43ba-921b-9d685f9c2fe9">
 
-![alt text](<Screenshot For Android AM.png>)
 
 #### For IOS:
-
-![alt text](ScreenshotForIOS.png)
+<img width="1470" alt="ScreenshotForIOS" src="https://github.com/user-attachments/assets/25653f9d-c70b-47cb-b026-8be291a7279c">
